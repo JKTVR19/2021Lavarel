@@ -1,1 +1,14 @@
-cd c:\xampp\htdocs\2021Laravel\laravel
+	cd c:\xampp\htdocs\2021Laravel\laravel
+
+
+введите следующую команду для установки Laravel.
+	composer create-project laravel/laravel –-prefer-dist 
+Проект назовите именно laravel для установки фреймворка
+
+
+
+
+	cd c:\xampp\htdocs\имяПапкиПроекта
+Команда 
+	php artisan serve 
+– запустить проект для просмотра
