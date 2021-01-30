@@ -30,7 +30,6 @@
 			</tr>
 		 @endforeach
 	</table>
-	 <!--{!! $countries->links() !!} Это постраничная пагинация -->
 	@else
 		<p>Data no found</p>
 	@endif
