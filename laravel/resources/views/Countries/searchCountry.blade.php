@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 <div class="container">
  <div class="row">
@@ -29,7 +30,7 @@
 			</tr>
 		 @endforeach
 	</table>
-	 {!! $countries->links() !!}<!-- Это постраничная пагинация -->
+	 <!--{!! $countries->links() !!} Это постраничная пагинация -->
 	@else
 		<p>Data no found</p>
 	@endif
@@ -38,4 +39,4 @@
 	<?php
 		$countCountry=count($countries);
 	?>
-	<p>Колличество государств: {{$countCountry}}</p>
+	<p>Количество государств: {{$countCountry}}</p>

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 <div class="container">
  <div class="row">
@@ -8,7 +9,7 @@
 		 </div>
 	 </div>
  </div>
-@if (count($countries ?? '') > 0)
+	@if (count($countries ?? '') > 0)
 	<table class="table table-striped">
 		<tr>
 			<th style="width:10%">Code</th>

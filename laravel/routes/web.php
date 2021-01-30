@@ -25,3 +25,8 @@ Route::get('/detail/{country}', 'CountryController@show');
 Route::get('/search/', 'CountryController@search')->name('search');
 
 Route::get('/cities', 'CityController@index');
+
+//---------------------------меню - список континентов -> список государств по континентам
+
+Route::get('/continent', 'CountryController@listContinent');
+Route::get('/continentCountry/{continent}', 'CountryController@listContinent');

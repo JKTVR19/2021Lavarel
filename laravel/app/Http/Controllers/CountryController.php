@@ -62,11 +62,18 @@ class CountryController extends Controller
             //Search in the Name and Continent columna from country table
         $countries = Country::query()
             ->where('Name', 'LIKE', "%{$search}%")
-            ->orWhere('Continent', 'LIKE',"%{$search}%")
+            ->orWhere('Continent', 'LIKE', "%{$search}%")
             ->get();
 
             //Return the search view with the results compacted
         return view('countries.searchCountry', compact('countries'));
+    }
+    //-------------------------------------------------------------
+    public function listContinent()
+    {
+        //список контитнентов
+        $continents=Country::distinct()->get('continent');
+        return view('countries.countryContinent', compact('continents'));
     }
     /**
      * Show the form for editing the specified resource.
