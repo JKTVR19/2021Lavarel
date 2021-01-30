@@ -14,6 +14,8 @@ class CityController extends Controller
      */
     public function index()
     {
+        $cities = City::orderBy('CountryCode', 'asc')->orderBy('Name', 'asc')->latest()->paginate(8);
+        return view('cities.listCity', compact('cities'))->with('i', (request()->input('page', 1) - 1) * 8);
         //
     }
 

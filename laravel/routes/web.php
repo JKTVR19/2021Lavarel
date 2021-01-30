@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Country;
+use App\City;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,5 @@ Route::get('/', function () {
 
 Route::get('/countries', 'CountryController@index');
 Route::get('/detail/{country}', 'CountryController@show');
+
+Route::get('/cities', 'CityController@index');
