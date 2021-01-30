@@ -53,6 +53,21 @@ class CountryController extends Controller
         //
     }
 
+//-------------------------------------------------------------------------------------------
+    public function search(Request $request)
+    {
+        //Get the search value form from requst
+        $search = $request->input('search');
+
+            //Search in the Name and Continent columna from country table
+        $countries = Country::query()
+            ->where('Name', 'LIKE', "%{$search}%")
+            ->orWhere('Continent', 'LIKE',"%{$search}%")
+            ->get();
+
+            //Return the search view with the results compacted
+        return view('countries.searchCountry', compact('countries'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -86,4 +101,11 @@ class CountryController extends Controller
     {
         //
     }
+     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Country  $country
+     * @return \Illuminate\Http\Response
+     */
+     
 }

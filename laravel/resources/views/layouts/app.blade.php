@@ -33,18 +33,24 @@ type='text/css'>
  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
  Hello, {{ Auth::user()->name }} <span class="caret"></span>
  </a>
- <ul class="dropdown-menu" role="menu">
+ <!--<ul class="dropdown-menu" role="menu">
  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
- </ul>
+ </ul>-->
  </li>
  @endif
  </ul>
+ <div class="nav navbar-nav navbar-right" style="margin-top: 40px; margin-right:  -150px; ">
+ 	<form action="{{route('search')}}" method="GET">
+ 		<input type="text" name="search" required/>
+ 		<button type="submit">Search</button>
+ 	</form>
+ </div>
  </div>
  </div>
  </nav>
  <div class="content" >
  @yield('content')
-</div>
+</div><!---->
 <footer class="footer">
 <div class="container">
 <span class="text-muted">2021 Laravel World project Design&copy;</span>
