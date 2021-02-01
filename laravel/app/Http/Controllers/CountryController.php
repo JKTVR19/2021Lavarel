@@ -97,7 +97,48 @@ class CountryController extends Controller
     {
         //
     }
+//--------------------------filterCountry form
+    public function filterCountry()
+    {
+        //list continents all
+        $continents=Country::distinct()->get('continent');
+        //list GovernmentForm all
+        $governments=Country::distinct()->get('GovernmentForm');
+        //list countries all
+        $countries=Country::orderBy('Code', 'asc')->get();
+        //IndepYear - min
+        $numberMin=Country::query()
+        ->whereNotNull('IndepYear')
+        ->orderBy('IndepYear'. 'asc')->first();
+        //IndepYear - min
+        $numberMax=Country::orderBy('IndepYear'. 'asc')->first();
 
+        return view('countries.countryFilter', compact('continents', 'governments','countries', 'nimberMin', 'numberMax'));
+    }
+//--------Метод в контроллере - вывод данных после обработки формы фильтрации
+    public function filterShow(Request $request)
+    {
+        //              read data from form
+        $continent = $request->input('continent');
+        $government = $request->input('government');
+        $numberForm = $request->input('numberForm');
+        $numberTo = $request->input('numberTo');
+        //              requsts: all values from the for are passed
+        $countries = Country::query
+        ->where('Continent', 'LIKE', "%{$continent}%");
+        ->where('Government', 'LIKE', "%{$government}%");
+        ->where('IndepYear', '>=', "%{$numberForm}%");
+        ->where('IndepYear', '<=', "%{$numberTo}%");
+        ->get();
+        //              requsts: not passed values $numberForm='' $numberTo=''
+        if ($numberForm='' && $numberTo='') {
+            $countries = Country::query()
+            ->where('','LIKE', "%{$}%")
+            ->where('','LIKE', "%{$}%")
+            ->where('','LIKE', "%{$}%")
+            ->get()
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
