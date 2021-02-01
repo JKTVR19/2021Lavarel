@@ -34,8 +34,9 @@
 		<p>Data no found</p>
 	@endif
 </div>
-@endsection
+
 	<?php
 		$countCountry=count($countries);
 	?>
 	<p>Количество государств: {{$countCountry}}</p>
+	@endsection

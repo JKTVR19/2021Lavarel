@@ -15,3 +15,4 @@
 			?>
 <p>Количество городов: {{$countCity}}</p>
 </div>
+@endsection
