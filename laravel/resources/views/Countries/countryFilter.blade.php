@@ -24,16 +24,16 @@
 				</div>
 				<form action="{{url('filterSelect')}}" method="GET">
 					<div class="form-group"><!--select continent-->
-						<label>Selection continent</label>
+						<label>Select continent</label>
 						<select class="form-control" name="continent">
-						<option value="" selected="">Continent</option>
+						<option value="" selected>Continent</option>
 							@foreach ($continents as $continent)
 								<option value="{{$continent->continent}}">{{$continent->continent}}</option>
 							@endforeach
 						</select>
 					</div>
 					<div class="form-group"><!--select GovernmentForm-->
-						<label>Selection GovernmentForm</label>
+						<label>Select GovernmentForm</label>
 						<select class="form-control" name="government">
 						<option value="" selected="">GovernmentForm</option>
 							@foreach ($governments as $government)
@@ -43,7 +43,7 @@
 					</div>
 					<div class="form-group"><!--select IndepYear-->
 						<label>Select IndepYear</label>
-						from <input type="number" name="numberForm" value="{{$numberMin->IndepYear}}" class="form-control">
+						from <input type="number" name="numberFrom" value="{{$numberMin->IndepYear}}" class="form-control">
 						to <input type="number" name="numberTo" value="{{$numberMax->IndepYear}}" class="form-control">
 					</div>
 					<div class="form-group"><!--button-->

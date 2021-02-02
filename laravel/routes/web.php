@@ -30,3 +30,7 @@ Route::get('/cities', 'CityController@index');
 
 Route::get('/continent', 'CountryController@listContinent');
 Route::get('/continentCountry/{continent}', 'CountryController@listContinent');
+
+//------------------filter
+Route::get('/filter/', 'CountryController@filterCountry')->name('search');
+Route::get('/filterSelect', 'CountryController@filterShow');
